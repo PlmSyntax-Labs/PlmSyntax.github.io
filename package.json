@@ -1,8 +1,8 @@
 {
-  "name": "virex-astro",
+  "name": "plmsyntax-site",
   "type": "module",
-  "version": "1.4.1",
-  "description": "A production-ready SaaS theme for Astro. Built for those who want to go from zero to launch quickly.",
+  "version": "1.0.0",
+  "description": "PlmSyntax - The modern platform for building and shipping faster",
   "keywords": [
     "astro",
     "theme",
@@ -10,12 +10,12 @@
     "landing-page",
     "tailwindcss"
   ],
-  "author": "Erland <hello@erland.me>",
+  "author": "PlmSyntax",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erlandv/virex.git"
+    "url": "https://github.com/PlmSyntax/PlmSyntaxSite.git"
   },
-  "homepage": "https://virex.erland.me",
+  "homepage": "https://github.com/PlmSyntax",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

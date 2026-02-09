@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 
 // Site URL from environment variable with localhost fallback
-const siteUrl = process.env.SITE_URL || 'http://localhost:4321';
+const siteUrl = process.env.SITE_URL || 'https://github.com/PlmSyntax';
 
 // Custom integration to warn about missing environment variables after build
 function envCheckIntegration() {
