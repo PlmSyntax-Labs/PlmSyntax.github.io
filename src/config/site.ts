@@ -16,7 +16,7 @@ export const description =
   import.meta.env.SITE_DESCRIPTION || 'The modern platform for building and shipping faster';
 
 /** Production URL of your site (used for sitemap, RSS, canonical URLs) */
-export const url = import.meta.env.SITE_URL || 'https://github.com/PlmSyntax';
+export const url = import.meta.env.SITE_URL || 'https://PlmSyntax.github.io/PlmSyntax';
 
 /** Author name for meta tags and copyright */
 export const author = import.meta.env.SITE_AUTHOR || 'PlmSyntax Team';
