@@ -3,22 +3,21 @@
  *
  * @description
  * Contact information, methods, and FAQ data for the contact page.
- * Modify these values to customize your contact page content.
  */
 
 import type { ContactInfo, ContactMethod, ContactFAQ } from '../lib/types';
 
 /** Contact information used across contact page and legal pages */
 export const contact: ContactInfo = {
-  email: 'hello@virex.example.com',
-  supportEmail: 'support@virex.example.com',
-  salesEmail: 'sales@virex.example.com',
+  email: 'info@plmsyntax.com',
+  supportEmail: 'support@plmsyntax.com',
+  salesEmail: 'sales@plmsyntax.com',
   address: {
-    street: '123 Market Street, Suite 400',
-    city: 'San Francisco',
-    state: 'CA',
-    zip: '94102',
-    country: 'United States',
+    street: '[Your Street and Number]',
+    city: 'Munich',
+    state: 'Bavaria',
+    zip: '[PLZ]',
+    country: 'Germany',
   },
 };
 
@@ -31,16 +30,10 @@ export const contactMethods: ContactMethod[] = [
     href: `mailto:${contact.email}`,
   },
   {
-    icon: 'simple-icons:discord',
-    label: 'Discord',
-    value: 'Join Discord',
-    href: 'https://discord.gg/virex',
-  },
-  {
-    icon: 'lucide:twitter',
-    label: 'Twitter',
-    value: '@virex',
-    href: 'https://twitter.com/virex',
+    icon: 'lucide:github',
+    label: 'GitHub',
+    value: 'PlmSyntax',
+    href: 'https://github.com/PlmSyntax',
   },
 ];
 
@@ -51,12 +44,12 @@ export const contactFAQs: ContactFAQ[] = [
     answer: 'We respond to most inquiries within 24 hours during business days.',
   },
   {
-    question: 'Do you offer phone support?',
+    question: 'Is PlmSyntax available for download yet?',
     answer:
-      'Phone support is available for Enterprise customers. Others can reach us via email or Discord.',
+      'PlmSyntax is currently in development. Join the waitlist to be notified when early access begins.',
   },
   {
-    question: 'How do I report a bug?',
-    answer: 'Use the form with "Technical support" as subject, or open an issue on our GitHub.',
+    question: 'Do you offer volume licensing?',
+    answer: 'Yes, contact us at sales@plmsyntax.com for volume licensing and enterprise pricing.',
   },
 ];

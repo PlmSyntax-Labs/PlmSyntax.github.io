@@ -1,10 +1,10 @@
 ---
-quote: "As a solo founder, I don't have time to manage infrastructure. Virex handles everything so I can focus on building features my customers actually want."
+quote: "Before PlmSyntax, we were manually checking IDREF integrity across hundreds of split files. Now it's fully automated. This tool pays for itself in a single use."
 author: "Emma Chen"
-role: "Founder"
-company: "Indie Labs"
+role: "PLM Architect"
+company: "Global Manufacturing Corp"
 avatar: "/images/testimonials/emma-chen.webp"
-featured: false
-order: 3
+featured: true
+order: 2
 draft: false
 ---

@@ -31,7 +31,11 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <SEO
       title={title}
       description={description}
@@ -75,5 +79,68 @@ const {
       Skip to main content
     </a>
     <slot />
+
+    <!-- Analytics: silent tracking via Google Forms -->
+    <script is:inline>
+      (function () {
+        var startTime = Date.now();
+        var maxScroll = 0;
+        var sectionsViewed = {};
+        var clicks = [];
+        var sent = false;
+
+        // Track scroll depth
+        window.addEventListener('scroll', function () {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+          if (pct > maxScroll) maxScroll = pct;
+        });
+
+        // Track sections entering viewport
+        if (window.IntersectionObserver) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                var id = e.target.id || e.target.querySelector('h2,h3')?.textContent?.trim().substring(0, 40) || 'unknown';
+                sectionsViewed[id] = true;
+              }
+            });
+          }, { threshold: 0.3 });
+          document.querySelectorAll('section').forEach(function (s) { observer.observe(s); });
+        }
+
+        // Track clicks on links and buttons
+        document.addEventListener('click', function (e) {
+          var el = e.target.closest('a,button');
+          if (el && clicks.length < 20) {
+            clicks.push(el.textContent.trim().substring(0, 30));
+          }
+        });
+
+        // Send data when user leaves
+        function sendAnalytics() {
+          if (sent) return;
+          sent = true;
+          var params = new URLSearchParams();
+          params.append('entry.1057425198', location.pathname);
+          params.append('entry.777714297', document.referrer || 'direct');
+          params.append('entry.1632853858', screen.width + 'x' + screen.height);
+          params.append('entry.463683274', Math.round((Date.now() - startTime) / 1000) + 's');
+          params.append('entry.2048956033', maxScroll + '%');
+          params.append('entry.1763541546', Object.keys(sectionsViewed).join(', '));
+          params.append('entry.575501768', clicks.join(', '));
+          navigator.sendBeacon(
+            'https://docs.google.com/forms/d/e/1FAIpQLSfh9BRlZR2Y9d3XBzmSgE1-B1-BwEt9efRI0aIvBbGOEeCQBg/formResponse',
+            params
+          );
+        }
+
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'hidden') sendAnalytics();
+        });
+        window.addEventListener('beforeunload', sendAnalytics);
+      })();
+    </script>
   </body>
 </html>

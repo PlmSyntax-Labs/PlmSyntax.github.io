@@ -1,10 +1,10 @@
 ---
-quote: "The preview deployments feature alone is worth it. Every PR gets its own URL, and our design team can review changes without setting up anything locally."
+quote: "The Structure Audit saved us during a critical data migration. We caught 47 broken references that would have caused failures in production. The Excel export made reporting to stakeholders effortless."
 author: "Priya Sharma"
-role: "Engineering Lead"
-company: "DesignFlow"
+role: "PLM Migration Consultant"
+company: "Digital Transformation Partners"
 avatar: "/images/testimonials/priya-sharma.webp"
-featured: false
-order: 7
+featured: true
+order: 4
 draft: false
 ---

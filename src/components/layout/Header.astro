@@ -39,12 +39,11 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
       <!-- Logo / Site Name -->
       <a href="/" class="flex items-center gap-2 font-semibold text-lg text-text">
         {
-          siteConfig.logo ? (
-            <img src={siteConfig.logo} alt={siteConfig.name} class="h-8 w-auto" />
-          ) : (
-            siteConfig.name
+          siteConfig.logo && (
+            <img src={siteConfig.logo} alt="" class="h-7 w-auto" />
           )
         }
+        <span>{siteConfig.name}</span>
       </a>
 
       <!-- Desktop Navigation - Center -->

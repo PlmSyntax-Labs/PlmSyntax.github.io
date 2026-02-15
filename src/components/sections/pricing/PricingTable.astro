@@ -76,6 +76,7 @@ const {
 } = Astro.props;
 
 const hasHeading = title || subtitle;
+const allCustomPricing = plans.every((plan) => plan.monthlyPrice === null);
 
 const bgClass = {
   default: 'bg-background',
@@ -107,7 +108,8 @@ function formatPrice(price: number): string {
       )
     }
 
-    <!-- Billing Toggle -->
+    <!-- Billing Toggle (hidden when all plans use custom/one-time pricing) -->
+    {!allCustomPricing && (
     <div class="flex justify-center mb-12">
       <div class="inline-flex items-center gap-3 p-1.5 bg-surface border border-border rounded-lg">
         <button
@@ -152,9 +154,10 @@ function formatPrice(price: number): string {
         </button>
       </div>
     </div>
+    )}
 
     <!-- Pricing Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="pricing-cards">
+    <div class:list={['grid gap-8 max-w-4xl mx-auto', plans.length <= 2 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3']} id="pricing-cards">
       {
         plans.map((plan) => {
           const hasNumericPrice = plan.monthlyPrice !== null;
@@ -225,7 +228,9 @@ function formatPrice(price: number): string {
                       <span class="text-4xl font-bold text-text">
                         {plan.customPrice || 'Custom'}
                       </span>
-                      <span class="text-text-muted">/month</span>
+                      <div class="mt-1">
+                        <span class="text-xs text-text-muted">one-time payment</span>
+                      </div>
                     </div>
                   )}
                 </div>

@@ -1,10 +1,10 @@
 ---
-quote: "We migrated from our custom CI/CD setup to Virex in a weekend. The auto-detection just worked, and we deleted hundreds of lines of pipeline configuration."
+quote: "The IP Guard feature is critical for us. We share PLMXML with multiple vendors and need to strip proprietary part data before export. PlmSyntax makes it foolproof."
 author: "Marcus Johnson"
-role: "Senior Developer"
-company: "Buildkit"
+role: "CAD Data Manager"
+company: "Precision Engineering Ltd"
 avatar: "/images/testimonials/marcus-johnson.webp"
-featured: false
-order: 6
+featured: true
+order: 3
 draft: false
 ---

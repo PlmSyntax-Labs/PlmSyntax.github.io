@@ -13,30 +13,26 @@ export const name = import.meta.env.SITE_NAME || 'PlmSyntax';
 
 /** Site description for SEO and meta tags */
 export const description =
-  import.meta.env.SITE_DESCRIPTION || 'The modern platform for building and shipping faster';
+  import.meta.env.SITE_DESCRIPTION || 'The intelligent desktop toolkit for PLM Engineers';
 
 /** Production URL of your site (used for sitemap, RSS, canonical URLs) */
 export const url = import.meta.env.SITE_URL || 'https://PlmSyntax.github.io/PlmSyntax';
 
 /** Author name for meta tags and copyright */
-export const author = import.meta.env.SITE_AUTHOR || 'PlmSyntax Team';
+export const author = import.meta.env.SITE_AUTHOR || 'PlmSyntax';
 
-/** Path to logo file (relative to /public) */
-export const logo = '/logo.svg';
+/** Path to logo file (relative to /public) - set to empty to show site name as text */
+export const logo = '/favicon-32x32.png';
 
 /** Path to Open Graph image (relative to /public) */
 export const ogImage = '/images/og-image.png';
 
 /** Social media links */
-export const social: SocialLinks = {
-  twitter: 'https://twitter.com/PlmSyntax',
-  github: 'https://github.com/PlmSyntax',
-  discord: 'https://discord.gg/PlmSyntax',
-};
+export const social: SocialLinks = {};
 
 /** Legal configuration for privacy policy and terms pages */
 export const legal: LegalConfig = {
-  privacyEmail: 'privacy@plmsyntax.com',
-  legalEmail: 'legal@plmsyntax.com',
-  lastUpdated: 'February 9, 2026',
+  privacyEmail: 'info@plmsyntax.com',
+  legalEmail: 'info@plmsyntax.com',
+  lastUpdated: '14 February 2026',
 };
