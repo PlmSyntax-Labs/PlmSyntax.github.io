@@ -1,0 +1,33 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import { siteConfig } from '@/config';
+---
+
+<MarketingLayout
+  title={`Thank You - ${siteConfig.name}`}
+  description="Thank you for joining our waitlist."
+>
+  <head>
+    <meta name="robots" content="noindex" />
+  </head>
+
+  <section class="py-24 sm:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-primary/10 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1 class="text-4xl font-bold text-text sm:text-5xl">Thank You!</h1>
+      <p class="mt-6 text-lg text-text-muted max-w-2xl mx-auto">
+        We've successfully added you to the waitlist. You've secured your 50% early bird discount, and we'll notify you as soon as we launch in Q3 2026.
+      </p>
+      <div class="mt-10">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark transition-colors"
+        >
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

@@ -319,8 +319,7 @@ const pricingPlans = [
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: params.toString(),
         }).finally(() => {
-          form.classList.add('hidden');
-          successMsg?.classList.remove('hidden');
+          window.location.href = '/thanks';
         });
       });
     }
