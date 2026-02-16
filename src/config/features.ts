@@ -23,5 +23,5 @@ export const features: FeatureFlags = {
   testimonials: false,
 
   /** Enable roadmap section and /roadmap route */
-  roadmap: false,
+  roadmap: true,
 };

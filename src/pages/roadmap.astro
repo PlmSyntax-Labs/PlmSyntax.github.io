@@ -7,59 +7,33 @@ import { siteConfig } from '@/config';
 
 const roadmapItems = [
   {
-    quarter: 'Q1 2025',
+    quarter: 'Q3 2026',
     status: 'in-progress' as const,
     items: [
       {
-        title: 'GitHub Actions Integration',
-        description: 'Native integration with GitHub Actions for seamless CI/CD workflows.',
+        title: 'Initial Launch',
+        description: 'Public release of Smart Merge, IP Guard, and Structure Audit modules.',
         status: 'in-progress' as const,
       },
       {
-        title: 'Custom Domains SSL',
-        description: 'Automatic SSL certificate provisioning for custom domains.',
+        title: 'Batch Processing Engine',
+        description: 'High-performance parsing for multi-GB assembly files.',
         status: 'in-progress' as const,
-      },
-      {
-        title: 'Team Analytics Dashboard',
-        description: 'Comprehensive analytics for team performance and deployment metrics.',
-        status: 'planned' as const,
       },
     ],
   },
   {
-    quarter: 'Q2 2025',
+    quarter: 'Q4 2026',
     status: 'planned' as const,
     items: [
       {
-        title: 'Multi-Region Deployments',
-        description: 'Deploy your applications to multiple regions for better global performance.',
+        title: 'CLI Tool for Pipelines',
+        description: 'Automate PLMXML validation and sanitization in your CI/CD pipelines.',
         status: 'planned' as const,
       },
       {
-        title: 'Database Integrations',
-        description: 'One-click integrations with popular databases like PostgreSQL and MongoDB.',
-        status: 'planned' as const,
-      },
-      {
-        title: 'Advanced Caching',
-        description: 'Edge caching with fine-grained cache control and instant purging.',
-        status: 'planned' as const,
-      },
-    ],
-  },
-  {
-    quarter: 'Q3 2025',
-    status: 'planned' as const,
-    items: [
-      {
-        title: 'Serverless Functions',
-        description: 'Deploy serverless functions alongside your static sites.',
-        status: 'planned' as const,
-      },
-      {
-        title: 'A/B Testing',
-        description: 'Built-in A/B testing for deployments with traffic splitting.',
+        title: 'Advanced Structure Audit',
+        description: 'Deep link analysis across distributed PLMXML files.',
         status: 'planned' as const,
       },
     ],
@@ -69,13 +43,13 @@ const roadmapItems = [
     status: 'exploring' as const,
     items: [
       {
-        title: 'Self-Hosted Option',
-        description: 'Run Virex on your own infrastructure for complete control.',
+        title: 'Linux Support',
+        description: 'Native Linux builds for server-side pipeline integration.',
         status: 'exploring' as const,
       },
       {
-        title: 'Mobile App',
-        description: 'Monitor and manage deployments from your mobile device.',
+        title: 'Custom Metadata Scrubbing',
+        description: 'Rule-based IP sanitization for complex part structures.',
         status: 'exploring' as const,
       },
     ],
@@ -88,16 +62,16 @@ const roadmapItems = [
   description={`See what's coming next for ${siteConfig.name}. Our public roadmap shows planned features and improvements.`}
 >
   <PageHeader title="Product Roadmap" subtitle="See what we're working on and what's coming next.">
-    <span class="text-text-muted">Have a feature request? </span>
-    <a href="/contact" class="text-primary hover:underline">Let us know</a>.
+    <span class="text-text-muted">Want to shape the future of PlmSyntax? </span>
+    <a href="#waitlist" class="text-primary hover:underline">Join the waitlist</a>.
   </PageHeader>
 
   <RoadmapTimeline quarters={roadmapItems} background="default" />
 
   <CTA
-    title="Have a feature request?"
-    description="We'd love to hear your ideas. Share your feedback and help shape the future of our platform."
-    action={{ label: 'Contact Us', href: '/contact' }}
+    title="Help us prioritize features"
+    description="We're building PlmSyntax for PLM Engineers. Secure your early bird discount and let us know which features matter most to you."
+    action={{ label: 'Get 50% Early Bird Discount', href: '#waitlist' }}
     background="muted"
   />
 </MarketingLayout>

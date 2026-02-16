@@ -19,7 +19,9 @@ export const navigation: Navigation = {
   footer: {
     product: [],
     solutions: [],
-    resources: [],
+    resources: [
+      { label: 'Roadmap', href: '/roadmap' },
+    ],
     company: [],
     legal: [
       { label: 'Impressum', href: '/impressum' },
