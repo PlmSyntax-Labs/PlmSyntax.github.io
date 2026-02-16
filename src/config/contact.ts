@@ -9,14 +9,14 @@ import type { ContactInfo, ContactMethod, ContactFAQ } from '../lib/types';
 
 /** Contact information used across contact page and legal pages */
 export const contact: ContactInfo = {
-  email: 'info@plmsyntax.com',
+  email: 'support@plmsyntax.com',
   supportEmail: 'support@plmsyntax.com',
-  salesEmail: 'sales@plmsyntax.com',
+  salesEmail: 'support@plmsyntax.com',
   address: {
-    street: '[Your Street and Number]',
+    street: '',
     city: 'Munich',
     state: 'Bavaria',
-    zip: '[PLZ]',
+    zip: '80333',
     country: 'Germany',
   },
 };
