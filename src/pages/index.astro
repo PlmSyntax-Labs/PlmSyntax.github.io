@@ -5,7 +5,7 @@ import HowItWorks from '@sections/marketing/HowItWorks.astro';
 import FeaturesSection from '@sections/marketing/FeaturesSection.astro';
 import PricingTable from '@sections/pricing/PricingTable.astro';
 import CTA from '@sections/marketing/CTA.astro';
-import { siteConfig } from '@/config';
+import { siteConfig, modules } from '@/config';
 
 const features = [
   {
@@ -30,14 +30,14 @@ const features = [
 
 const pricingPlans = [
   {
-    name: 'Professional',
+    name: 'Single Module',
     monthlyPrice: null,
     customPrice: '$349',
-    description: 'Single User License — Merge module',
+    description: 'Single User License — Pick any module',
     features: [
-      'Smart Merge engine',
-      'UID/IDREF collision resolution',
-      'Batch file processing',
+      'Choose Merge, IP Guard, or Audit',
+      'Full functionality for one tool',
+      'Lifetime license',
       'Standard support',
     ],
     cta: { label: 'Get 50% Early Bird Discount', href: '#waitlist' },
@@ -46,7 +46,7 @@ const pricingPlans = [
     name: 'Enterprise Suite',
     monthlyPrice: null,
     customPrice: '$849',
-    description: 'Single User License — All modules',
+    description: 'Single User License — All 3 modules',
     features: [
       'Smart Merge engine',
       'IP Guard sanitization',
@@ -231,6 +231,18 @@ const pricingPlans = [
           />
         </div>
         <div>
+          <label for="waitlist-module" class="block text-sm font-medium text-text mb-1">Interested in</label>
+          <select
+            id="waitlist-module"
+            name="module"
+            class="w-full px-4 py-2.5 rounded-md border border-border bg-surface text-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+          >
+            {modules.map((module) => (
+              <option value={module.id}>{module.label}</option>
+            ))}
+          </select>
+        </div>
+        <div>
           <label for="waitlist-company" class="block text-sm font-medium text-text mb-1">Company (optional)</label>
           <input
             type="text"
@@ -294,11 +306,15 @@ const pricingPlans = [
         e.preventDefault();
         const email = (document.getElementById('waitlist-email') as HTMLInputElement)?.value;
         const company = (document.getElementById('waitlist-company') as HTMLInputElement)?.value;
+        const module = (document.getElementById('waitlist-module') as HTMLSelectElement)?.value;
 
         const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSceruEk5bdlwXLXVf6wKnUeByspX69VZTV-hWgcY_RpMSgKxg/formResponse';
         const params = new URLSearchParams();
         params.append('entry.361515637', email);
-        params.append('entry.1585641090', company || '');
+        
+        // Combine company and module with a divider
+        const companyWithModule = company ? `${company} | Module: ${module}` : `Module: ${module}`;
+        params.append('entry.1585641090', companyWithModule);
 
         // Submit silently (Google Forms doesn't support CORS, so we use no-cors)
         fetch(googleFormUrl, {

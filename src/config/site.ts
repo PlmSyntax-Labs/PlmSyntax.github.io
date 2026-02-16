@@ -30,6 +30,14 @@ export const ogImage = '/images/og-image.png';
 /** Social media links */
 export const social: SocialLinks = {};
 
+/** List of available product modules */
+export const modules = [
+  { id: 'merge', label: 'Smart Merge' },
+  { id: 'guard', label: 'IP Guard' },
+  { id: 'audit', label: 'Structure Audit' },
+  { id: 'suite', label: 'Full Enterprise Suite' },
+];
+
 /** Legal configuration for privacy policy and terms pages */
 export const legal: LegalConfig = {
   privacyEmail: 'info@plmsyntax.com',
