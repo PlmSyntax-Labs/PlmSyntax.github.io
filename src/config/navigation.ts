@@ -12,7 +12,7 @@ export const navigation: Navigation = {
   header: {
     main: [],
     cta: [
-      { label: 'Get Early Bird Discount', href: '#waitlist', variant: 'primary' },
+      { label: 'Get Early Bird Discount', href: '/#waitlist', variant: 'primary' },
     ],
   },
 
