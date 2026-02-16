@@ -154,17 +154,20 @@ const {
           modal?.classList.remove('flex');
         }
 
-        // Check hash on load
+        // Check hash immediately and with a small delay for reliability
         if (window.location.hash === '#waitlist') {
           openModal();
         }
+        setTimeout(() => {
+          if (window.location.hash === '#waitlist') openModal();
+        }, 100);
 
         // Open modal on any #waitlist link click
         document.querySelectorAll('a[href*="#waitlist"]').forEach((link) => {
           link.addEventListener('click', (e) => {
             const url = new URL((link as HTMLAnchorElement).href);
-            // If on same page, prevent navigation and just open modal
-            if (url.pathname === window.location.pathname || url.pathname === '/' && window.location.pathname === '') {
+            // If on same page or root, open modal
+            if (url.pathname === window.location.pathname || (url.pathname === '/' && window.location.pathname === '')) {
               e.preventDefault();
               openModal();
             }
