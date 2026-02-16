@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 
 // Site URL from environment variable with localhost fallback
-const siteUrl = process.env.SITE_URL || 'https://PlmSyntax.github.io';
+const siteUrl = process.env.SITE_URL || 'https://plmsyntax.com';
 
 // Custom integration to warn about missing environment variables after build
 function envCheckIntegration() {
@@ -17,7 +17,7 @@ function envCheckIntegration() {
         if (!process.env.SITE_URL) {
           console.warn('='.repeat(60));
           console.warn('WARNING: SITE_URL environment variable not set');
-          console.warn('Build completed with fallback URL: https://PlmSyntax.github.io/PlmSyntax');
+          console.warn('Build completed with fallback URL: https://plmsyntax.com');
           console.warn('For production, create .env file and set SITE_URL');
           console.warn('='.repeat(60) + '\n');
         }
@@ -28,7 +28,7 @@ function envCheckIntegration() {
 
 export default defineConfig({
   site: siteUrl,
-  base: '/PlmSyntax',
+  base: '/',
   integrations: [
     mdx(),
     icon(),

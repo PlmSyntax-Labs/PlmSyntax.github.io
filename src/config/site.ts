@@ -16,7 +16,7 @@ export const description =
   import.meta.env.SITE_DESCRIPTION || 'The intelligent desktop toolkit for PLM Engineers';
 
 /** Production URL of your site (used for sitemap, RSS, canonical URLs) */
-export const url = import.meta.env.SITE_URL || 'https://PlmSyntax.github.io/PlmSyntax';
+export const url = import.meta.env.SITE_URL || 'https://plmsyntax.com';
 
 /** Author name for meta tags and copyright */
 export const author = import.meta.env.SITE_AUTHOR || 'PlmSyntax';
