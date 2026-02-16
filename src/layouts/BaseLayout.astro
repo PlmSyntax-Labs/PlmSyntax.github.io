@@ -142,23 +142,34 @@ const {
         const closeBtn = document.getElementById('waitlist-close');
         const form = document.getElementById('waitlist-form');
 
-        // Open modal on any #waitlist link click
-        document.querySelectorAll('a[href*="#waitlist"]').forEach((link) => {
-          link.addEventListener('click', (e) => {
-            // Only prevent default if it's strictly a trigger on the same page
-            if (location.pathname === (link as HTMLAnchorElement).pathname || (link as HTMLAnchorElement).pathname === '') {
-              e.preventDefault();
-            }
-            modal?.classList.remove('hidden');
-            modal?.classList.add('flex');
-          });
-        });
+        if (!modal) return;
 
-        // Close modal
+        function openModal() {
+          modal?.classList.remove('hidden');
+          modal?.classList.add('flex');
+        }
+
         function closeModal() {
           modal?.classList.add('hidden');
           modal?.classList.remove('flex');
         }
+
+        // Check hash on load
+        if (window.location.hash === '#waitlist') {
+          openModal();
+        }
+
+        // Open modal on any #waitlist link click
+        document.querySelectorAll('a[href*="#waitlist"]').forEach((link) => {
+          link.addEventListener('click', (e) => {
+            const url = new URL((link as HTMLAnchorElement).href);
+            // If on same page, prevent navigation and just open modal
+            if (url.pathname === window.location.pathname || url.pathname === '/' && window.location.pathname === '') {
+              e.preventDefault();
+              openModal();
+            }
+          });
+        });
 
         closeBtn?.addEventListener('click', closeModal);
         modal?.addEventListener('click', (e) => {
