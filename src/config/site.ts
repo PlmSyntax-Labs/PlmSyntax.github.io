@@ -41,7 +41,7 @@ export const modules = [
 
 /** Legal configuration for privacy policy and terms pages */
 export const legal: LegalConfig = {
-  privacyEmail: 'info@plmsyntax.com',
-  legalEmail: 'info@plmsyntax.com',
+  privacyEmail: 'support@plmsyntax.com',
+  legalEmail: 'support@plmsyntax.com',
   lastUpdated: '14 February 2026',
 };

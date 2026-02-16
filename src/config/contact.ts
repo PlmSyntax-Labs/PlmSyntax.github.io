@@ -50,6 +50,6 @@ export const contactFAQs: ContactFAQ[] = [
   },
   {
     question: 'Do you offer volume licensing?',
-    answer: 'Yes, contact us at sales@plmsyntax.com for volume licensing and enterprise pricing.',
+    answer: 'Yes, contact us at support@plmsyntax.com for volume licensing and enterprise pricing.',
   },
 ];

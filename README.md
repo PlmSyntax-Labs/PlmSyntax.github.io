@@ -34,7 +34,7 @@ This landing page is built using:
 PlmSyntax is currently in **Final QA** for its Q3 2026 launch. 
 To join the waitlist or inquire about early-access beta testing, please visit [plmsyntax.com](https://plmsyntax.com) or contact us at:
 
-**Contact:** [info@plmsyntax.com](mailto:info@plmsyntax.com)  
+**Contact:** [support@plmsyntax.com](mailto:support@plmsyntax.com)  
 **Location:** Munich, Bavaria, Germany
 
 ---
