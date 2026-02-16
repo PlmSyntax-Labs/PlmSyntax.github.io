@@ -36,6 +36,7 @@ export const modules = [
   { id: 'guard', label: 'IP Guard' },
   { id: 'audit', label: 'Structure Audit' },
   { id: 'suite', label: 'Full Enterprise Suite' },
+  { id: 'team', label: 'Team License' },
 ];
 
 /** Legal configuration for privacy policy and terms pages */
