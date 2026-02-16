@@ -20,9 +20,7 @@ export const navigation: Navigation = {
     product: [],
     solutions: [],
     resources: [],
-    company: [
-      { label: 'Contact', href: '/contact' },
-    ],
+    company: [],
     legal: [
       { label: 'Impressum', href: '/impressum' },
       { label: 'Privacy', href: '/privacy' },
