@@ -123,17 +123,19 @@ const {
           if (sent) return;
           sent = true;
           var params = new URLSearchParams();
-          params.append('entry.1057425198', location.pathname);
-          params.append('entry.777714297', document.referrer || 'direct');
-          params.append('entry.1632853858', screen.width + 'x' + screen.height);
-          params.append('entry.463683274', Math.round((Date.now() - startTime) / 1000) + 's');
-          params.append('entry.2048956033', maxScroll + '%');
-          params.append('entry.1763541546', Object.keys(sectionsViewed).join(', '));
-          params.append('entry.575501768', clicks.join(', '));
-          navigator.sendBeacon(
-            'https://docs.google.com/forms/d/e/1FAIpQLSfh9BRlZR2Y9d3XBzmSgE1-B1-BwEt9efRI0aIvBbGOEeCQBg/formResponse',
-            params
-          );
+          params.append('entry.1828254785', location.pathname);
+          params.append('entry.1647285148', document.referrer || 'direct');
+          params.append('entry.1398373838', screen.width + 'x' + screen.height);
+          params.append('entry.1874351611', Math.round((Date.now() - startTime) / 1000) + 's');
+          params.append('entry.405780363', maxScroll + '%');
+          params.append('entry.1970008169', Object.keys(sectionsViewed).join(', '));
+          params.append('entry.1184740145', clicks.join(', '));
+          fetch('https://docs.google.com/forms/d/e/1FAIpQLSfh9BRlZR2Y9d3XBzmSgE1-B1-BwEt9efRI0aIvBbGOEeCQBg/formResponse', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: params.toString(),
+          });
         }
 
         document.addEventListener('visibilitychange', function () {
