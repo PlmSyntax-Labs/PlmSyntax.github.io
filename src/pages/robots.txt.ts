@@ -11,6 +11,8 @@ Allow: /
 # Disallow admin and API routes (if any)
 Disallow: /api/
 Disallow: /_astro/
+Disallow: /thanks/
+Disallow: /thanks
 
 # Sitemap location
 Sitemap: ${siteConfig.url}/sitemap-index.xml

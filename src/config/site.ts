@@ -27,6 +27,18 @@ export const logo = '/favicon-32x32.png';
 /** Path to Open Graph image (relative to /public) */
 export const ogImage = '/images/og-image.png';
 
+/** SEO Keywords */
+export const keywords = [
+  'PLMXML',
+  'PLM Merge',
+  'UID Collision',
+  'PLM Data Migration',
+  'PLMXML Sanitization',
+  'Teamcenter XML',
+  'PLM Engineering Tools',
+  'IP Guard',
+];
+
 /** Social media links */
 export const social: SocialLinks = {};
 

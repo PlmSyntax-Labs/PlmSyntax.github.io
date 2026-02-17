@@ -28,7 +28,7 @@
  * />
  * ```
  */
-import { siteConfig } from '@/config';
+import { siteConfig, keywords } from '@/config';
 
 interface Props {
   /** Page title (will be appended with site name) */
@@ -57,7 +57,7 @@ const {
   publishedDate,
   modifiedDate,
   author,
-  tags = [],
+  tags = keywords,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
@@ -66,6 +66,20 @@ const imageUrl = image || siteConfig.ogImage;
 const ogImage = imageUrl ? new URL(imageUrl, siteConfig.url).href : undefined;
 
 // JSON-LD Structured Data
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: siteConfig.name,
+  operatingSystem: 'Windows',
+  applicationCategory: 'BusinessApplication',
+  description: siteConfig.description,
+  offers: {
+    '@type': 'Offer',
+    price: '349.00',
+    priceCurrency: 'USD',
+  },
+};
+
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -176,6 +190,7 @@ const breadcrumbSchema = {
 {ogImage && <meta property="twitter:image" content={ogImage} />}
 
 <!-- JSON-LD Structured Data -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
