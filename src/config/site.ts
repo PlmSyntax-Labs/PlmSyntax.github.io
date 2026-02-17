@@ -22,7 +22,7 @@ export const url = import.meta.env.SITE_URL || 'https://plmsyntax.com';
 export const author = import.meta.env.SITE_AUTHOR || 'PlmSyntax';
 
 /** Path to logo file (relative to /public) - set to empty to show site name as text */
-export const logo = '/images/og-image.png';
+export const logo = '/apple-touch-icon.png';
 
 /** Path to Open Graph image (relative to /public) */
 export const ogImage = '/images/og-image.png';
